@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Input Section -->
+        <div class="calculator">
+            <form id="optionsForm">
+                <label for="S0">Spot Price (S0):</label>
+                <input type="number" id="S0" name="S0" step="0.01" value="100.0" required>
+                
+                <label for="K">Strike Price (K):</label>
+                <input type="number" id="K" name="K" step="0.01" value="110.0" required>
+                
+                <label for="rfr">Risk-Free Rate (rfr):</label>
+                <input type="number" id="rfr" name="rfr" step="0.01" value="0.05" required>
+                
+                <label for="sigma">Volatility (sigma):</label>
+                <input type="number" id="sigma" name="sigma" step="0.01" value="0.2" required>
+                
+                <label for="T">Time to Maturity (T):</label>
+                <input type="number" id="T" name="T" step="0.01" value="1.0" required>
+                
+                <label for="q1">Dividend Yield (q1):</label>
+                <input type="number" id="q1" name="q1" step="0.01" value="0.00" required>
+                
+                <label for="type">Option Type:</label>
+                <select id="type" name="type" required>
+                    <option value="call" selected>Call</option>
+                    <option value="put">Put</option>
+                </select>
+                
+                <button type="button" id="calculateButton">Calculate</button>
+            </form>
+        </div>
+        <div id="output" class="results">
+            <div id="result" class="result-message"></div>
+            <div class="details-container">
+                <h3>Sample Paths</h3>
+                <div class="table-wrapper">
+                    <table id="samplePaths">
+                        <!-- Table will be dynamically populated -->
+                    </table>
+                </div>
+                <button id="downloadButton" class="hidden">Download CSV</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

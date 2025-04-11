@@ -1,0 +1,11 @@
+### fastapi, github CICD, dockerhub, render.com
+
+'''
+MVP of fastapi, file structure \
+set docker cred in github secrets \
+'''
+
+uvicorn app.main:app --reload \
+docker build -t fastapi .  \
+docker build --no-cache -t fastapi . \
+docker run -p 8000:8000 fastapi \

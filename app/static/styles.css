@@ -1,0 +1,196 @@
+/* General body styling */
+body {
+    font-family: 'Impact', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f39982, #4a69f5);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Header styling */
+h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #ff3300;
+    margin-bottom: 20px;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Calculator Section */
+.calculator {
+    width: 100%; /* Full width initially */
+    background-color: #1a1a1a;
+    color: #ffcc00;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+    border-right: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.calculator.active {
+    width: 40%; /* Shrink to 40% when active */
+    border-right: 3px solid #ff3300;
+}
+
+.calculator label {
+    font-size: 1rem;
+    color: #ffcc00;
+    margin-bottom: 7.5px;
+    text-align: left;
+    width: 100%; /* Ensure labels align with inputs */
+}
+
+.calculator input, .calculator select {
+    width: 100%; /* Full width inputs */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff3300;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffcc00;
+    font-size: 1rem;
+}
+
+.calculator .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.calculator button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.calculator button#calculateButton {
+    background-color: #ff3300;
+    color: #fff;
+}
+
+.calculator button#calculateButton:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+/* Results Section */
+.results {
+    width: 0; /* Hidden initially */
+    background-color: #1a1a2e;
+    color: #00d4ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.results.active {
+    width: 60%; /* Expand to 60% when active */
+}
+
+.result-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 #00d4ff;
+    text-align: center; /* Center the result text */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+.details-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.details-container h3 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.table-wrapper {
+    max-height: 300px; /* Limit the height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #00d4ff;
+    border-radius: 5px;
+    width: 100%; /* Make the table take full width */
+}
+
+#samplePaths {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table */
+}
+
+#samplePaths th, #samplePaths td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #00d4ff;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#samplePaths th {
+    background-color: #00d4ff;
+    color: #000;
+    position: sticky; /* Keep the header visible while scrolling */
+    top: 0;
+    z-index: 1;
+}
+
+#samplePaths td {
+    background-color: #1a1a2e;
+    color: #00d4ff;
+}
+
+/* Style for the download button */
+.hidden {
+    display: none;
+}
+#downloadButton {
+    margin-top: 20px; /* Add space between the button and the table */
+    padding: 10px 20px;
+    background-color: #00d4ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: block; /* Ensure it spans the full width of its container */
+    text-align: center;
+}
+
+#downloadButton:hover {
+    background-color: #ffcc00;
+    color: #000;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
