@@ -39,3 +39,9 @@ Thumbs.db
 
 # Docker-related files
 *.pid
+
+# Filepath: .gitignore
+app/static/script.js
+
+# Ignore .http files
+*.http
