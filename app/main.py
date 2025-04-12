@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
-
+from starlette.websockets import WebSocketDisconnect
 from app.services.calc_service import blsprice, calc
 from app.models.option import Option
 from app.routes import ml_router
@@ -62,6 +62,10 @@ async def websocket_endpoint(websocket: WebSocket):
                 "data": table_data,
             }
             await websocket.send_json(result)
+        
+        # Exit the loop when the client disconnects
+        except WebSocketDisconnect:
+            break
 
         except ValidationError as e:
             # Handle validation errors and send error messages to the client
